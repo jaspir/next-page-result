@@ -1,0 +1,46 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Next Page Result Form</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        
+        <form id="form">
+            <div id="title">Next Page form</div> 
+            <br>
+            <div id="item1"><label for="name">Name: </label><input type="text" id="name" size="40"   placeholder="Jasper D. Salibay"></div>
+            <br>
+            <div id="item2"><label for="age">Age: </label><input type="text" id="age" size="40"placeholder="18"></div>
+            <br>
+            <div id="item3"><label for="school">School: </label><input type="text" id="school" size="40" placeholder="Polytechnic University of the Phillipines"></div>
+            <br>
+            <div id="item4"><label for="course">Course: </label><input type="text" id="course" placeholder="Diploma in Computer Engineering" size="40"></div>
+            <br> 
+        
+            <input type="submit" value="Submit">
+        </form>
+
+        <script>
+            document.getElementById("form").addEventListener("submit", function(event) {
+                event.preventDefault();
+                
+                const n = document.getElementById('name').value.trim();
+                const a = document.getElementById('age').value.trim();
+                const s = document.getElementById('school').value.trim();
+                const c = document.getElementById('course').value.trim();
+    
+                sessionStorage.setItem("name", n);
+                sessionStorage.setItem("age", a);
+                sessionStorage.setItem("school", s);
+                sessionStorage.setItem("course", c);
+    
+                window.location.href = "result.html";
+            });
+        </script>
+
+    </body>
+    </html>
